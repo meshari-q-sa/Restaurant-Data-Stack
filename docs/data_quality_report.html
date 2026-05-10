@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Data Quality Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f7fa; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        h2 { color: #2c3e50; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .metric { background: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #667eea; border-radius: 4px; }
+        .metric-label { font-size: 0.85em; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-value { font-size: 2em; font-weight: bold; color: #2c3e50; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #f0f0f0; padding: 12px; text-align: left; border-bottom: 2px solid #ddd; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f9f9f9; }
+        .pass { color: #27ae60; font-weight: bold; }
+        .warn { color: #e67e22; font-weight: bold; }
+        .checklist { margin: 20px 0; }
+        .check-item { padding: 12px; margin: 8px 0; border-radius: 4px; border-left: 4px solid #27ae60; background: #d4edda; color: #155724; }
+        .check-warn { padding: 12px; margin: 8px 0; border-radius: 4px; border-left: 4px solid #e67e22; background: #fff3cd; color: #856404; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Project Marcus — Data Quality Report</h1>
+        <p>Generated: 2026-05-10 15:23:05</p>
+        
+        <h2>📊 Summary</h2>
+        <div class="metric">
+            <div class="metric-label">Total Orders</div>
+            <div class="metric-value">54,438</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Total Order Items</div>
+            <div class="metric-value">132,298</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Total Payments</div>
+            <div class="metric-value">51,787</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Active Branches</div>
+            <div class="metric-value">10</div>
+        </div>
+        
+        <h2>✅ Quality Checks</h2>
+        <div class="checklist">
+            <div class="check-item">
+                <strong>Duplicate Order IDs:</strong> 0 duplicates — ✅ PASS
+            </div>
+            <div class="check-warn">
+                <strong>Payment Reconciliation:</strong> 93.86% reconciled (3,345 unreconciled) — ⚠️ INVESTIGATE
+            </div>
+            <div class="check-item">
+                <strong>Branch Coverage:</strong> 10 branches present — ✅ PASS
+            </div>
+        </div>
+        
+        <h2>🏪 Branch Details</h2>
+        <table>
+            <tr>
+                <th>Branch Name</th>
+                <th>Orders</th>
+                <th>Items</th>
+                <th>Avg Ticket (SAR)</th>
+            </tr>
+            <tr>
+                <td>بروستد الريف  - العزيزية</td>
+                <td>8,275</td>
+                <td>20,070</td>
+                <td>39.3</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف -  النهضة</td>
+                <td>5,464</td>
+                <td>13,602</td>
+                <td>40.8</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف -  بدر</td>
+                <td>5,681</td>
+                <td>13,614</td>
+                <td>38.3</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - الرمال</td>
+                <td>5,610</td>
+                <td>14,033</td>
+                <td>41.7</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - العليا</td>
+                <td>1,720</td>
+                <td>4,794</td>
+                <td>50.9</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - المهدية</td>
+                <td>8,042</td>
+                <td>18,563</td>
+                <td>38.8</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - الياسمين</td>
+                <td>1,934</td>
+                <td>5,619</td>
+                <td>52.8</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - طويق</td>
+                <td>8,930</td>
+                <td>20,411</td>
+                <td>39.6</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - قرطبه</td>
+                <td>1,222</td>
+                <td>3,566</td>
+                <td>53.1</td>
+            </tr>
+            <tr>
+                <td>بروستد الريف - لبن</td>
+                <td>7,560</td>
+                <td>18,026</td>
+                <td>39.8</td>
+            </tr>
+
+        </table>
+        
+        <h2>📋 Null Rates — Orders Table</h2>
+        <table>
+            <tr><th>Column</th><th>Null %</th><th>Non-Null Count</th></tr>
+<tr><td>reference</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>number</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>external_number</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>branch_name</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>branch_reference</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>type</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>source</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>status</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>original_order_reference</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>business_date</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>subtotal</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>total_price</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>total_charge</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>coupon_code</td><td style="color: #e74c3c;">100.0%</td><td>0</td></tr><tr><td>coupon_name</td><td style="color: #e74c3c;">100.0%</td><td>0</td></tr><tr><td>discount_name</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>discounts</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>guests</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>tax_exclusive_discount_amount</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>tax_exclusive_total_charges</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>rounding</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>total_taxes</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>created_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>created_by</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>accepted_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>opened_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>due_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>closed_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>closed_by</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>check_number</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>tags</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>customer_name</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>customer_dial_code</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>customer_phone</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>customer_address_delivery_zone_name</td><td style="color: #e74c3c;">8.7%</td><td>49,702</td></tr><tr><td>customer_address_name</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>customer_address_description</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>receipt_notes</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>kitchen_notes</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>kitchen_received_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>kitchen_done_at</td><td style="">0.0%</td><td>54,438</td></tr><tr><td>preparation_period</td><td style="">0.0%</td><td>54,438</td></tr>
+        </table>
+        
+        <h2>📋 Null Rates — Order Items Table</h2>
+        <table>
+            <tr><th>Column</th><th>Null %</th><th>Non-Null Count</th></tr>
+<tr><td>order_reference</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>check_number</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>order_status</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>type</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>parent_item_sku</td><td style="color: #e74c3c;">94.78%</td><td>6,901</td></tr><tr><td>status</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>sku</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>name</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>name_localized</td><td style="">0.0%</td><td>132,293</td></tr><tr><td>unit_price</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>unit_cost</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>quantity</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>total_price</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>total_cost</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>discount_amount</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>discount_name</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>tax_exclusive_unit_price</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>tax_exclusive_total_price</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>tax_exclusive_discount_amount</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>total_taxes</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>business_date</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>branch_name</td><td style="">0.0%</td><td>132,298</td></tr><tr><td>branch_reference</td><td style="">0.0%</td><td>132,298</td></tr>
+        </table>
+
+        <h2>📋 Null Rates — Payments Table</h2>
+        <table>
+            <tr><th>Column</th><th>Null %</th><th>Non-Null Count</th></tr>
+<tr><td>order_reference</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>branch_name</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>branch_reference</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>payment_method_name</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>payment_method_name_localized</td><td style="color: #e74c3c;">60.63%</td><td>20,386</td></tr><tr><td>retrieval_reference_number</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>amount</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>tendered</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>tips</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>business_date</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>order_business_date</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>paid_at</td><td style="">0.0%</td><td>51,787</td></tr><tr><td>employee_name</td><td style="color: #e74c3c;">9.3%</td><td>46,973</td></tr>
+        </table>
+        
+        <footer>
+            <p><strong>Phase 1 — Data Foundation | Project Marcus</strong></p>
+            <p>This report validates data quality before warehouse construction. Filtered to بروستد الريف branches only.</p>
+        </footer>
+    </div>
+</body>
+</html>
