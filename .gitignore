@@ -1,0 +1,12 @@
+# Raw data and outputs
+   data/raw/
+   data/clean/
+   
+   # Python
+   __pycache__/
+   *.pyc
+   .env
+   
+   # IDE
+   .vscode/
+   .DS_Store
